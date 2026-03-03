@@ -1,0 +1,71 @@
+pragma: Lib <
+  name:    "bacnet.services"
+  version: "0.1.0"
+  doc:     "BACnet application service descriptors per ASHRAE 135"
+>
+
+BacnetService: Dict <abstract> {
+  serviceName: Str
+  confirmed: Marker?
+}
+
+// Object Access Services
+ReadPropertyService: BacnetService { }
+WritePropertyService: BacnetService { }
+ReadPropertyMultipleService: BacnetService { }
+WritePropertyMultipleService: BacnetService { }
+ReadRangeService: BacnetService { }
+
+// Device Discovery Services
+WhoIsService: BacnetService { }
+IAmService: BacnetService { }
+WhoHasService: BacnetService { }
+IHaveService: BacnetService { }
+
+// Change of Value Services
+SubscribeCovService: BacnetService { }
+ConfirmedCovNotificationService: BacnetService { }
+UnconfirmedCovNotificationService: BacnetService { }
+SubscribeCovPropertyService: BacnetService { }
+SubscribeCovPropertyMultipleService: BacnetService { }
+
+// Event and Alarm Services
+ConfirmedEventNotificationService: BacnetService { }
+UnconfirmedEventNotificationService: BacnetService { }
+AcknowledgeAlarmService: BacnetService { }
+GetAlarmSummaryService: BacnetService { }
+GetEventInformationService: BacnetService { }
+GetEnrollmentSummaryService: BacnetService { }
+
+// Device Management Services
+DeviceCommunicationControlService: BacnetService { }
+ReinitializeDeviceService: BacnetService { }
+CreateObjectService: BacnetService { }
+DeleteObjectService: BacnetService { }
+TimeSynchronizationService: BacnetService { }
+UtcTimeSynchronizationService: BacnetService { }
+
+// List Manipulation Services
+AddListElementService: BacnetService { }
+RemoveListElementService: BacnetService { }
+
+// File Services
+AtomicReadFileService: BacnetService { }
+AtomicWriteFileService: BacnetService { }
+
+// Private Transfer Services
+ConfirmedPrivateTransferService: BacnetService { }
+UnconfirmedPrivateTransferService: BacnetService { }
+
+// Audit Services
+AuditLogQueryService: BacnetService { }
+
+// Group Services
+WriteGroupService: BacnetService { }
+
+// Life Safety Services
+LifeSafetyOperationService: BacnetService { }
+
+// Text Message Services
+ConfirmedTextMessageService: BacnetService { }
+UnconfirmedTextMessageService: BacnetService { }

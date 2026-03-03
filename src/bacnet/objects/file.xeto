@@ -1,0 +1,20 @@
+pragma: Lib <
+  name:    "bacnet.objects.file"
+  version: "0.1.0"
+  doc:     "BACnet File object type per ASHRAE 135 Clause 12.13"
+>
+
+// File object per Clause 12.13
+File: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  fileType: Str?
+  fileSize: Number?
+  modificationDate: Str?
+  archive: Marker?
+  readOnly: Marker?
+  fileAccessMethod: Str?
+  profileName: Str?
+}

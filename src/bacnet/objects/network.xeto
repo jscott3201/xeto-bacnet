@@ -1,0 +1,52 @@
+pragma: Lib <
+  name:    "bacnet.objects.network"
+  version: "0.1.0"
+  doc:     "BACnet Network Port and Network Security object types per ASHRAE 135 Clause 12.56"
+>
+
+// Network Port object per Clause 12.56
+NetworkPort: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  reliability: Str?
+  outOfService: Marker?
+  networkType: Str?
+  networkNumber: Number?
+  networkNumberQuality: Str?
+  macAddress: Str?
+  maxApduLengthAccepted: Number?
+  linkSpeed: Number?
+  linkSpeedAutoNegotiate: Marker?
+  changesPending: Marker?
+  command: Str?
+  ipAddress: Str?
+  ipDefaultGateway: Str?
+  ipDnsServer: Str?
+  ipSubnetMask: Str?
+  ipDhcpEnable: Marker?
+  ipDhcpLeaseTime: Number?
+  ipDhcpServer: Str?
+  bacnetIpMode: Str?
+  bacnetIpUdpPort: Number?
+  bacnetIpMulticastAddress: Str?
+  bacnetIpNatTraversal: Marker?
+  bacnetIpGlobalAddress: Str?
+  fdBbmdAddress: Str?
+  fdSubscriptionLifetime: Number?
+  bbmdAcceptFdRegistrations: Marker?
+  maxMaster: Number?
+  maxInfoFrames: Number?
+  profileName: Str?
+}
+
+// Network Security object per Clause 12.44
+NetworkSecurity: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  profileName: Str?
+}

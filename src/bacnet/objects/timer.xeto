@@ -1,0 +1,33 @@
+pragma: Lib <
+  name:    "bacnet.objects.timer"
+  version: "0.1.0"
+  doc:     "BACnet Timer object type per ASHRAE 135 Clause 12.57"
+>
+
+// Timer object per Clause 12.57
+Timer: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number?
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  timerState: Str?
+  timerRunning: Marker?
+  updateTime: Str?
+  lastStateChange: Str?
+  initialTimeout: Number?
+  defaultTimeout: Number?
+  minPresValue: Number?
+  maxPresValue: Number?
+  expirationTime: Str?
+  stateChangeValues: Str?
+  listOfObjectPropertyReferences: Str?
+  priorityForWriting: Number?
+  eventDetectionEnable: Marker?
+  currentCommandPriority: Number?
+  profileName: Str?
+}

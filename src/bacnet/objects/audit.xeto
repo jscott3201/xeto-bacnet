@@ -1,0 +1,42 @@
+pragma: Lib <
+  name:    "bacnet.objects.audit"
+  version: "0.1.0"
+  doc:     "BACnet Audit Log and Audit Reporter object types per ASHRAE 135"
+>
+
+// Audit Log object per Clause 12.61
+AuditLog: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  enable: Marker?
+  bufferSize: Number?
+  logBuffer: Str?
+  recordCount: Number?
+  totalRecordCount: Number?
+  memberOf: Str?
+  issueConfirmedNotifications: Marker?
+  deleteOnForward: Marker?
+  profileName: Str?
+}
+
+// Audit Reporter object per Clause 12.63
+AuditReporter: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  reliability: Str?
+  presentValue: Str?
+  auditLevel: Str?
+  auditSourceReporter: Str?
+  auditableOperations: Str?
+  auditablePriorityFilter: Str?
+  issueConfirmedNotifications: Marker?
+  monitoredObjects: Str?
+  deleteOnForward: Marker?
+  profileName: Str?
+}

@@ -1,0 +1,83 @@
+pragma: Lib <
+  name:    "bacnet.objects.trend"
+  version: "0.1.0"
+  doc:     "BACnet trend logging object types per ASHRAE 135 Clause 12"
+>
+
+// Trend Log object per Clause 12.25
+TrendLog: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  enable: Marker?
+  logBuffer: Str?
+  recordCount: Number?
+  totalRecordCount: Number?
+  loggingType: Str?
+  logDeviceObjectProperty: Str?
+  logInterval: Number?
+  startTime: Str?
+  stopTime: Str?
+  stopWhenFull: Marker?
+  bufferSize: Number?
+  alignIntervals: Marker?
+  intervalOffset: Number?
+  trigger: Marker?
+  notificationThreshold: Number?
+  notificationClass: Number?
+  profileName: Str?
+}
+
+// Trend Log Multiple object per Clause 12.30
+TrendLogMultiple: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  enable: Marker?
+  logBuffer: Str?
+  recordCount: Number?
+  totalRecordCount: Number?
+  loggingType: Str?
+  logDeviceObjectProperties: Str?
+  logInterval: Number?
+  startTime: Str?
+  stopTime: Str?
+  stopWhenFull: Marker?
+  bufferSize: Number?
+  alignIntervals: Marker?
+  intervalOffset: Number?
+  trigger: Marker?
+  notificationThreshold: Number?
+  notificationClass: Number?
+  profileName: Str?
+}
+
+// Event Log object per Clause 12.27
+EventLog: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  enable: Marker?
+  logBuffer: Str?
+  recordCount: Number?
+  totalRecordCount: Number?
+  startTime: Str?
+  stopTime: Str?
+  stopWhenFull: Marker?
+  bufferSize: Number?
+  notificationThreshold: Number?
+  notificationClass: Number?
+  profileName: Str?
+}

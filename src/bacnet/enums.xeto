@@ -1,0 +1,802 @@
+pragma: Lib <
+  name:    "bacnet.enums"
+  version: "0.1.0"
+  doc:     "ASHRAE 135-2020 BACnet enumerations"
+>
+
+// BACnet object types per Clause 12
+ObjectType: Enum {
+  analogInput
+  analogOutput
+  analogValue
+  binaryInput
+  binaryOutput
+  binaryValue
+  calendar
+  command
+  device
+  eventEnrollment
+  file
+  group
+  loop
+  multiStateInput
+  multiStateOutput
+  notificationClass
+  program
+  schedule
+  averaging
+  multiStateValue
+  trendLog
+  lifeSafetyPoint
+  lifeSafetyZone
+  accumulator
+  pulseConverter
+  eventLog
+  globalGroup
+  trendLogMultiple
+  loadControl
+  structuredView
+  accessDoor
+  timer
+  accessCredential
+  accessPoint
+  accessRights
+  accessUser
+  accessZone
+  credentialDataInput
+  networkSecurity
+  bitstringValue
+  characterstringValue
+  datePatternValue
+  dateValue
+  datetimePatternValue
+  datetimeValue
+  integerValue
+  largeAnalogValue
+  octetstringValue
+  positiveIntegerValue
+  timePatternValue
+  timeValue
+  notificationForwarder
+  alertEnrollment
+  channel
+  lightingOutput
+  binaryLightingOutput
+  networkPort
+  elevatorGroup
+  escalator
+  lift
+  staging
+  auditReporter
+  auditLog
+}
+
+// Reliability values per Clause 12
+Reliability: Enum {
+  noFaultDetected
+  noSensor
+  overRange
+  underRange
+  openLoop
+  shortedLoop
+  noOutput
+  unreliableOther
+  processError
+  multiStateFault
+  configurationError
+  communicationFailure
+  memberFault
+  monitoredObjectFault
+  tripped
+  lampFailure
+  activationFailure
+  renewDhcpFailure
+  renewFdRegistrationFailure
+  restartAutoNegotiationFailure
+  restartFailure
+  proprietaryCommandFailure
+  faultsListed
+  referencedObjectFault
+}
+
+// Event state per Clause 12
+EventState: Enum {
+  normal
+  fault
+  offnormal
+  highLimit
+  lowLimit
+  lifeSafetyAlarm
+}
+
+// Binary present value
+BinaryPV: Enum {
+  inactive
+  active
+}
+
+// Polarity per Clause 12
+Polarity: Enum {
+  normal
+  reverse
+}
+
+// Device status per Clause 12.11
+DeviceStatus: Enum {
+  operational
+  operationalReadOnly
+  downloadRequired
+  downloadInProgress
+  nonOperational
+  backupInProgress
+}
+
+// Segmentation support per Clause 20
+Segmentation: Enum {
+  segmentedBoth
+  segmentedTransmit
+  segmentedReceive
+  noSegmentation
+}
+
+// Program state per Clause 12.22
+ProgramState: Enum {
+  idle
+  loading
+  running
+  waiting
+  halted
+  unloading
+}
+
+// Program change request per Clause 12.22
+ProgramChange: Enum {
+  ready
+  load
+  run
+  halt
+  restart
+  unload
+}
+
+// Action per Clause 12.10
+Action: Enum {
+  direct
+  reverse
+}
+
+// File access method per Clause 12.13
+FileAccessMethod: Enum {
+  recordAccess
+  streamAccess
+}
+
+// Notify type per Clause 12.21
+NotifyType: Enum {
+  alarm
+  event
+  ackNotification
+}
+
+// Event type per Clause 13
+EventType: Enum {
+  changeOfBitstring
+  changeOfState
+  changeOfValue
+  commandFailure
+  floatingLimit
+  outOfRange
+  changeOfLifeSafety
+  extended
+  bufferReady
+  unsignedRange
+  accessEvent
+  doubleOutOfRange
+  signedOutOfRange
+  unsignedOutOfRange
+  changeOfCharacterstring
+  changeOfStatusFlags
+  changeOfReliability
+  none
+  changeOfDiscreteValue
+  changeOfTimer
+}
+
+// Logging type per Clause 12.25
+LoggingType: Enum {
+  polled
+  cov
+  triggered
+}
+
+// Backup and restore state per Clause 19
+BackupAndRestoreState: Enum {
+  idle
+  preparingForBackup
+  preparingForRestore
+  performingABackup
+  performingARestore
+}
+
+// Enable/disable per Clause 16.4
+EnableDisable: Enum {
+  enable
+  disable
+  disableInitiation
+}
+
+// Reinitialized state per Clause 16.5
+ReinitializedState: Enum {
+  coldstart
+  warmstart
+  startBackup
+  endBackup
+  startRestore
+  endRestore
+  abortRestore
+  activateChanges
+}
+
+// Door alarm state per Clause 12.26
+DoorAlarmState: Enum {
+  normal
+  alarm
+  doorOpenTooLong
+  forcedOpen
+  tamper
+  doorFault
+  lockFault
+  freeAccess
+  egressOpen
+}
+
+// Door status per Clause 12.26
+DoorStatus: Enum {
+  closed
+  opened
+  unknown
+}
+
+// Lock status per Clause 12.26
+LockStatus: Enum {
+  locked
+  unlocked
+  lockFault
+  unused
+  unknown
+}
+
+// Door secured status per Clause 12.26
+DoorSecuredStatus: Enum {
+  secured
+  unsecured
+  unknown
+}
+
+// Life safety mode per Clause 12.15
+LifeSafetyMode: Enum {
+  off
+  on
+  test
+  manned
+  unmanned
+  armed
+  disarmed
+  prearmed
+  slow
+  fast
+  disconnected
+  enabled
+  disabled
+  automaticReleaseDisabled
+  default
+}
+
+// Life safety state per Clause 12.15
+LifeSafetyState: Enum {
+  quiet
+  preAlarm
+  alarm
+  fault
+  faultPreAlarm
+  faultAlarm
+  notReady
+  active
+  tamper
+  testAlarm
+  testActive
+  testFault
+  testFaultAlarm
+  holdup
+  duress
+  tamperAlarm
+  abnormal
+  emergencyPower
+  delayed
+  blocked
+  localAlarm
+  generalAlarm
+  supervisory
+  testSupervisory
+}
+
+// Life safety operation per Clause 13.13
+LifeSafetyOperation: Enum {
+  none
+  silence
+  silenceAudible
+  silenceVisual
+  silenceAll
+  unsilence
+  unsilenceAudible
+  unsilenceVisual
+  unsilenceAll
+  reset
+  resetAlarm
+  resetFault
+}
+
+// Silenced state per Clause 12.15
+SilencedState: Enum {
+  unsilenced
+  audibleSilenced
+  visibleSilenced
+  allSilenced
+}
+
+// Timer state per Clause 12.57
+TimerState: Enum {
+  idle
+  running
+  expired
+}
+
+// Timer transition per Clause 12.57
+TimerTransition: Enum {
+  none
+  idleToRunning
+  runningToIdle
+  runningToRunning
+  runningToExpired
+  forcedToExpired
+  expiredToIdle
+  expiredToRunning
+}
+
+// Network port type per Clause 12.56
+NetworkType: Enum {
+  ethernet
+  arcnet
+  mstp
+  ptp
+  lontalk
+  ipv4
+  zigbee
+  virtual
+  nonBacnet
+  ipv6
+  serial
+}
+
+// IP addressing mode per Clause 12.56
+IPMode: Enum {
+  normal
+  foreign
+  bbmd
+}
+
+// Network port command per Clause 12.56
+NetworkPortCommand: Enum {
+  idle
+  discardChanges
+  renewFdRegistration
+  restartSlaveDiscovery
+  renewDhcp
+  restartAutoneg
+  disconnect
+  restartPort
+}
+
+// Network number quality per Clause 12.56
+NetworkNumberQuality: Enum {
+  unknown
+  learned
+  learnedConfigured
+  configured
+}
+
+// Lighting operation per Clause 12.54
+LightingOperation: Enum {
+  none
+  fadeTo
+  rampTo
+  stepUp
+  stepDown
+  stepOn
+  stepOff
+  warn
+  warnOff
+  warnRelinquish
+  stop
+}
+
+// Lighting in-progress per Clause 12.54
+LightingInProgress: Enum {
+  idle
+  fadeActive
+  rampActive
+  notControlled
+  other
+}
+
+// Write status per Clause 12.53
+WriteStatus: Enum {
+  idle
+  inProgress
+  successful
+  failed
+}
+
+// Escalator mode per Clause 12.60
+EscalatorMode: Enum {
+  unknown
+  stop
+  up
+  down
+  inspection
+  outOfService
+}
+
+// Lift car direction per Clause 12.59
+LiftCarDirection: Enum {
+  unknown
+  none
+  stopped
+  up
+  down
+  upAndDown
+}
+
+// Lift group mode per Clause 12.58
+LiftGroupMode: Enum {
+  unknown
+  normal
+  downPeak
+  twoWay
+  fourWay
+  emergency
+  upPeak
+}
+
+// Lift car door command per Clause 12.59
+LiftCarDoorCommand: Enum {
+  none
+  open
+  close
+}
+
+// Lift car drive status per Clause 12.59
+LiftCarDriveStatus: Enum {
+  unknown
+  stationary
+  braking
+  accelerate
+  decelerate
+  ratedSpeed
+  singleFloorJump
+  twoFloorJump
+  threeFloorJump
+  multiFloorJump
+}
+
+// Lift car mode per Clause 12.59
+LiftCarMode: Enum {
+  unknown
+  normal
+  vip
+  homing
+  parking
+  attendantControl
+  firefighterControl
+  emergencyPower
+  inspection
+  cabinetRecall
+  earthquakeOperation
+  fireOperation
+  outOfService
+  occupantEvacuation
+}
+
+// Load control shed state per Clause 12.28
+ShedState: Enum {
+  shedInactive
+  shedRequestPending
+  shedCompliant
+  shedNonCompliant
+}
+
+// Node type for Structured View per Clause 12.29
+NodeType: Enum {
+  unknown
+  system
+  network
+  device
+  organizational
+  area
+  equipment
+  point
+  collection
+  property
+  functional
+  other
+  subsystem
+  building
+  floor
+  section
+  module
+  tree
+  member
+  protocol
+  room
+  zone
+}
+
+// Access event per Clause 12.33
+AccessEvent: Enum {
+  none
+  granted
+  muster
+  passbackDetected
+  duress
+  trace
+  lockoutMaxAttempts
+  lockoutOther
+  lockoutRelinquished
+  lockedByHigherPriority
+  outOfService
+  outOfServiceRelinquished
+  accompanimentBy
+  authenticationFactorRead
+  authorizationDelayed
+  verificationRequired
+  noEntryAfterGranted
+}
+
+// Access credential disable per Clause 12.35
+AccessCredentialDisable: Enum {
+  none
+  disable
+  disableManual
+  disableLockout
+}
+
+// Access user type per Clause 12.33
+AccessUserType: Enum {
+  asset
+  group
+  person
+}
+
+// Authorization mode per Clause 12.31
+AuthorizationMode: Enum {
+  authorize
+  grantActive
+  denyAll
+  verificationRequired
+  authorizationDelayed
+  none
+}
+
+// Access passback mode per Clause 12.32
+AccessPassbackMode: Enum {
+  passbackOff
+  hardPassback
+  softPassback
+}
+
+// Staging state per Clause 12.62 (new in 135-2020)
+StagingState: Enum {
+  notStaged
+  staging
+  staged
+  committing
+  committed
+  abandoning
+  abandoned
+}
+
+// Audit level per Clause 19.6 (new in 135-2020)
+AuditLevel: Enum {
+  none
+  auditAll
+  auditConfig
+  default
+}
+
+// Audit operation per Clause 19.6 (new in 135-2020)
+AuditOperation: Enum {
+  read
+  write
+  create
+  delete
+  lifeSafety
+  acknowledgeAlarm
+  deviceDisableComm
+  deviceEnableComm
+  deviceRestart
+  deviceBackup
+  deviceRestore
+  subscription
+  notification
+  auditingFailure
+  networkChanges
+  general
+}
+
+// Engineering units — most common values per Clause 21
+// Full list has 290+ entries in ASHRAE 135 Clause 21
+EngineeringUnits: Enum {
+  // Temperature
+  degreesCelsius
+  degreesFahrenheit
+  degreesKelvin
+  degreesKelvinPerHour
+  degreesKelvinPerMinute
+  degreeDaysCelsius
+  degreeDaysFahrenheit
+  deltaDegreesFahrenheit
+  deltaDegreesKelvin
+  // Pressure
+  pascals
+  hectopascals
+  kilopascals
+  bars
+  millibars
+  poundsForcePerSquareInch
+  millimetersOfWater
+  centimetersOfWater
+  inchesOfWater
+  millimetersOfMercury
+  centimetersOfMercury
+  inchesOfMercury
+  // Flow
+  cubicMetersPerSecond
+  cubicMetersPerMinute
+  cubicMetersPerHour
+  cubicFeetPerSecond
+  cubicFeetPerMinute
+  cubicFeetPerHour
+  litersPerSecond
+  litersPerMinute
+  litersPerHour
+  usGallonsPerMinute
+  usGallonsPerHour
+  imperialGallonsPerMinute
+  // Humidity
+  percentRelativeHumidity
+  gramsOfWaterPerKilogramDryAir
+  // Power / Energy
+  milliwatts
+  watts
+  kilowatts
+  megawatts
+  btusPerHour
+  kiloBtusPerHour
+  horsepower
+  tonsRefrigeration
+  wattHours
+  kilowattHours
+  megawattHours
+  joules
+  kilojoules
+  megajoules
+  btus
+  kiloBtus
+  megaBtus
+  therms
+  tonHours
+  // Electrical
+  milliamperes
+  amperes
+  volts
+  millivolts
+  kilovolts
+  megavolts
+  voltAmperes
+  kilovoltAmperes
+  megavoltAmperes
+  voltAmperesReactive
+  kilovoltAmperesReactive
+  megavoltAmperesReactive
+  ohms
+  milliohms
+  kilohms
+  megohms
+  hertz
+  kilohertz
+  megahertz
+  degreesPhase
+  powerFactor
+  decibels
+  decibelsMillivolt
+  decibelsVolt
+  // Speed
+  metersPerSecond
+  metersPerMinute
+  metersPerHour
+  kilometersPerHour
+  feetPerSecond
+  feetPerMinute
+  milesPerHour
+  millimetersPerSecond
+  millimetersPerMinute
+  // Time
+  seconds
+  hundredthsSeconds
+  milliseconds
+  minutes
+  hours
+  days
+  weeks
+  months
+  years
+  // Length
+  micrometers
+  millimeters
+  centimeters
+  meters
+  kilometers
+  inches
+  feet
+  // Area
+  squareMeters
+  squareCentimeters
+  squareFeet
+  squareInches
+  // Volume
+  cubicMeters
+  cubicFeet
+  liters
+  milliliters
+  usGallons
+  imperialGallons
+  // Mass
+  milligrams
+  grams
+  kilograms
+  poundsMass
+  tons
+  // Mass flow
+  gramsPerSecond
+  gramsPerMinute
+  kilogramsPerSecond
+  kilogramsPerMinute
+  kilogramsPerHour
+  poundsMassPerMinute
+  poundsMassPerHour
+  tonsPerHour
+  // Rotation
+  revolutionsPerMinute
+  // Light
+  candelas
+  candelasPerSquareMeter
+  wattsPerSquareFoot
+  wattsPerSquareMeter
+  lumens
+  luxes
+  footCandles
+  // Concentration
+  partsPerMillion
+  partsPerBillion
+  percent
+  percentPerSecond
+  perHour
+  perMinute
+  perSecond
+  // Angular
+  degreesAngular
+  radians
+  radiansPerSecond
+  // Misc
+  noUnits
+}

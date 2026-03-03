@@ -1,0 +1,17 @@
+pragma: Lib <
+  name:    "bacnet.network",
+  version: "0.1.0",
+  doc:     "BACnet network layer types"
+>
+
+// Logical BACnet network per Clause 6
+BacnetNetwork: Dict {
+  networkNumber: Number
+  dis: Str?
+}
+
+// BACnet router — bridges multiple networks per Clause 6.6
+BacnetRouter: Dict {
+  dis: Str?
+  routerPortCount: Number?
+}

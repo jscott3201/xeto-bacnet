@@ -1,0 +1,47 @@
+pragma: Lib <
+  name:    "bacnet.objects.group"
+  version: "0.1.0"
+  doc:     "BACnet Group and Structured View object types per ASHRAE 135 Clause 12"
+>
+
+// Group object per Clause 12.14
+Group: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  listOfGroupMembers: Str?
+  presentValue: Str?
+  profileName: Str?
+}
+
+// Global Group object per Clause 12.29
+GlobalGroup: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  groupMembers: Str?
+  groupMemberNames: Str?
+  presentValue: Str?
+  covuPeriod: Number?
+  covuRecipients: Str?
+  reliabilityEvaluationInhibit: Marker?
+  profileName: Str?
+}
+
+// Structured View object per Clause 12.29
+StructuredView: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  nodeType: Str?
+  nodeSubtype: Str?
+  subordinateList: Str?
+  subordinateAnnotations: Str?
+  structuredObjectList: Str?
+  defaultSubordinateRelationship: Str?
+  represents: Ref?
+  profileName: Str?
+}

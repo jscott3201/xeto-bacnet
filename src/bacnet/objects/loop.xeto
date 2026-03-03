@@ -1,0 +1,57 @@
+pragma: Lib <
+  name:    "bacnet.objects.loop"
+  version: "0.1.0"
+  doc:     "BACnet Loop and Command object types per ASHRAE 135 Clause 12"
+>
+
+// Loop object per Clause 12.16
+Loop: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  manipulatedVariableReference: Ref?
+  controlledVariableReference: Ref?
+  controlledVariableValue: Number?
+  controlledVariableUnits: Str?
+  setpoint: Number?
+  setpointReference: Ref?
+  action: Str?
+  proportionalConstant: Number?
+  proportionalConstantUnits: Str?
+  integralConstant: Number?
+  integralConstantUnits: Str?
+  derivativeConstant: Number?
+  derivativeConstantUnits: Str?
+  bias: Number?
+  maximumOutput: Number?
+  minimumOutput: Number?
+  errorLimit: Number?
+  outputUnits: Str?
+  priorityForWriting: Number?
+  covIncrement: Number?
+  updateInterval: Number?
+  profileName: Str?
+}
+
+// Command object per Clause 12.10
+Command: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  action: Str?
+  actionText: Str?
+  allWritesSuccessful: Marker?
+  inProcess: Marker?
+  profileName: Str?
+}

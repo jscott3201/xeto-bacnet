@@ -1,0 +1,27 @@
+pragma: Lib <
+  name:    "bacnet.objects.load"
+  version: "0.1.0"
+  doc:     "BACnet Load Control object type per ASHRAE 135 Clause 12.28"
+>
+
+// Load Control object per Clause 12.28
+LoadControl: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str?
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  requestedShedLevel: Str?
+  actualShedLevel: Str?
+  expectedShedLevel: Str?
+  fullDutyBaseline: Number?
+  shedDuration: Number?
+  shedLevels: Str?
+  shedLevelDescriptions: Str?
+  stateDescription: Str?
+  dutyWindow: Number?
+  profileName: Str?
+}

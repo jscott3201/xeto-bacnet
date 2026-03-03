@@ -1,0 +1,138 @@
+pragma: Lib <
+  name:    "bacnet.objects.access"
+  version: "0.1.0"
+  doc:     "BACnet access control object types per ASHRAE 135 Clause 12"
+>
+
+// Access Door object per Clause 12.26
+AccessDoor: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  presentValue: Str?
+  doorStatus: Str?
+  lockStatus: Str?
+  doorAlarmState: Str?
+  doorMembers: Str?
+  doorPulseTime: Number?
+  doorExtendedPulseTime: Number?
+  doorOpenTooLongTime: Number?
+  doorUnlockDelayTime: Number?
+  maskedAlarmValues: Str?
+  securedStatus: Str?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  maintenanceRequired: Marker?
+  profileName: Str?
+}
+
+// Access Point object per Clause 12.31
+AccessPoint: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  accessDoors: Str?
+  accessEvent: Str?
+  accessEventCredential: Str?
+  accessEventTime: Str?
+  authorizationMode: Str?
+  passbackMode: Str?
+  passbackTimeout: Number?
+  profileName: Str?
+}
+
+// Access Zone object per Clause 12.32
+AccessZone: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  zoneMembers: Str?
+  occupancyCount: Number?
+  occupancyState: Str?
+  passbackMode: Str?
+  profileName: Str?
+}
+
+// Access Credential object per Clause 12.35
+AccessCredential: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  credentialStatus: Str?
+  credentialDisable: Str?
+  daysRemaining: Number?
+  usesRemaining: Number?
+  expirationTime: Str?
+  authenticationFactors: Str?
+  assignedAccessRights: Str?
+  profileName: Str?
+}
+
+// Access Rights object per Clause 12.34
+AccessRights: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  negativeAccessRules: Str?
+  positiveAccessRules: Str?
+  globalIdentifier: Number?
+  profileName: Str?
+}
+
+// Access User object per Clause 12.33
+AccessUser: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  userName: Str?
+  userType: Str?
+  credentials: Str?
+  memberOf: Str?
+  profileName: Str?
+}
+
+// Credential Data Input object per Clause 12.36
+CredentialDataInput: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  presentValue: Str?
+  updateTime: Str?
+  supportedFormats: Str?
+  profileName: Str?
+}

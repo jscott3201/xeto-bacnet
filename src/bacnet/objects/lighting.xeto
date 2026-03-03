@@ -1,0 +1,51 @@
+pragma: Lib <
+  name:    "bacnet.objects.lighting"
+  version: "0.1.0"
+  doc:     "BACnet lighting object types per ASHRAE 135 Clause 12"
+>
+
+// Lighting Output object per Clause 12.54
+LightingOutput: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number
+  description: Str?
+  statusFlags: Str?
+  outOfService: Marker?
+  trackingValue: Number?
+  lightingCommand: Str?
+  lightingCommandDefaultPriority: Number?
+  inProgress: Str?
+  blinkWarnEnable: Marker?
+  egressActive: Marker?
+  egressTime: Number?
+  defaultFadeTime: Number?
+  defaultRampRate: Number?
+  defaultStepIncrement: Number?
+  power: Number?
+  instantaneousPower: Number?
+  minActualValue: Number?
+  maxActualValue: Number?
+  priorityArray: Str?
+  relinquishDefault: Number?
+  feedbackValue: Number?
+  profileName: Str?
+}
+
+// Channel object per Clause 12.53
+Channel: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str?
+  description: Str?
+  statusFlags: Str?
+  outOfService: Marker?
+  channelNumber: Number?
+  listOfObjectPropertyReferences: Str?
+  lastPriority: Number?
+  writeStatus: Str?
+  controlGroups: Str?
+  profileName: Str?
+}

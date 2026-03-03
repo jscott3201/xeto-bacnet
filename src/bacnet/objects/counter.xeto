@@ -1,0 +1,82 @@
+pragma: Lib <
+  name:    "bacnet.objects.counter"
+  version: "0.1.0"
+  doc:     "BACnet accumulator, pulse converter, and averaging object types per ASHRAE 135 Clause 12"
+>
+
+// Accumulator object per Clause 12.23
+Accumulator: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  units: Str?
+  maxPresValue: Number?
+  scale: Str?
+  scaleFactor: Number?
+  prescale: Str?
+  count: Number?
+  countBeforeChange: Number?
+  countChangeTime: Str?
+  valueBeforeChange: Number?
+  valueChangeTime: Str?
+  valueSet: Number?
+  loggingObject: Ref?
+  loggingRecord: Str?
+  limitMonitoringInterval: Number?
+  covPeriod: Number?
+  profileName: Str?
+}
+
+// Pulse Converter object per Clause 12.24
+PulseConverter: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  units: Str?
+  adjustValue: Number?
+  count: Number?
+  countBeforeChange: Number?
+  countChangeTime: Str?
+  scaleFactor: Number?
+  updateTime: Str?
+  covPeriod: Number?
+  inputReference: Ref?
+  profileName: Str?
+}
+
+// Averaging object per Clause 12.14
+Averaging: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number?
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  units: Str?
+  attemptedSamples: Number?
+  validSamples: Number?
+  averageValue: Number?
+  minimumValue: Number?
+  minimumValueTimestamp: Str?
+  maximumValue: Number?
+  maximumValueTimestamp: Str?
+  varianceValue: Number?
+  windowInterval: Number?
+  windowSamples: Number?
+  profileName: Str?
+}

@@ -1,0 +1,36 @@
+pragma: Lib <
+  name:    "bacnet.objects.schedule"
+  version: "0.1.0"
+  doc:     "BACnet schedule and calendar object types per ASHRAE 135 Clause 12"
+>
+
+// Schedule object per Clause 12.24
+Schedule: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str?
+  description: Str?
+  weeklySchedule: Str?
+  exceptionSchedule: Str?
+  scheduleDefault: Str?
+  listOfObjectPropertyReferences: Str?
+  priorityForWriting: Number?
+  effectivePeriod: Str?
+  statusFlags: Str?
+  reliability: Str?
+  outOfService: Marker?
+  profileName: Str?
+  eventDetectionEnable: Marker?
+}
+
+// Calendar object per Clause 12.8
+Calendar: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Marker?
+  description: Str?
+  dateList: Str?
+  profileName: Str?
+}

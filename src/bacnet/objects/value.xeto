@@ -1,0 +1,180 @@
+pragma: Lib <
+  name:    "bacnet.objects.value"
+  version: "0.1.0"
+  doc:     "BACnet value object types per ASHRAE 135 Clause 12"
+>
+
+// Bitstring Value object per Clause 12.39
+BitstringValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  bitText: Str?
+  bitMask: Str?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  profileName: Str?
+}
+
+// Characterstring Value object per Clause 12.40
+CharacterstringValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  profileName: Str?
+}
+
+// Date Value object per Clause 12.43
+DateValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  isUtc: Marker?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  profileName: Str?
+}
+
+// Datetime Value object per Clause 12.44
+DatetimeValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  isUtc: Marker?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  profileName: Str?
+}
+
+// Date Pattern Value object per Clause 12.41
+DatePatternValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  profileName: Str?
+}
+
+// Datetime Pattern Value object per Clause 12.42
+DatetimePatternValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  profileName: Str?
+}
+
+// Integer Value object per Clause 12.45
+IntegerValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  units: Str?
+  minPresValue: Number?
+  maxPresValue: Number?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  profileName: Str?
+}
+
+// Octetstring Value object per Clause 12.47
+OctetstringValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  profileName: Str?
+}
+
+// Positive Integer Value object per Clause 12.48
+PositiveIntegerValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  units: Str?
+  minPresValue: Number?
+  maxPresValue: Number?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  profileName: Str?
+}
+
+// Time Value object per Clause 12.49
+TimeValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  profileName: Str?
+}
+
+// Time Pattern Value object per Clause 12.50
+TimePatternValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  outOfService: Marker?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  profileName: Str?
+}

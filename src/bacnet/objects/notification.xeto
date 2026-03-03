@@ -1,0 +1,67 @@
+pragma: Lib <
+  name:    "bacnet.objects.notification"
+  version: "0.1.0"
+  doc:     "BACnet notification and event enrollment types per ASHRAE 135 Clause 12"
+>
+
+// Notification Class object per Clause 12.21
+NotificationClass: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  notificationClass: Number
+  priority: Str?
+  ackRequired: Str?
+  recipientList: Str?
+  profileName: Str?
+}
+
+// Event Enrollment object per Clause 12.12
+EventEnrollment: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  eventType: Str?
+  notifyType: Str?
+  eventParameters: Str?
+  objectPropertyReference: Str?
+  eventState: Str?
+  eventEnable: Str?
+  ackedTransitions: Str?
+  notificationClass: Number?
+  eventTimeStamps: Str?
+  profileName: Str?
+}
+
+// Alert Enrollment object per Clause 12.52
+AlertEnrollment: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  presentValue: Str?
+  eventState: Str?
+  eventEnable: Str?
+  eventDetectionEnable: Marker?
+  notificationClass: Number?
+  profileName: Str?
+}
+
+// Notification Forwarder object per Clause 12.51
+NotificationForwarder: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  reliability: Str?
+  outOfService: Marker?
+  processIdentifierFilter: Str?
+  recipientList: Str?
+  subscribedRecipients: Str?
+  portFilter: Str?
+  localForwardingOnly: Marker?
+  profileName: Str?
+}

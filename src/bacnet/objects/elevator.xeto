@@ -1,0 +1,98 @@
+pragma: Lib <
+  name:    "bacnet.objects.elevator"
+  version: "0.1.0"
+  doc:     "BACnet elevator, escalator, lift, and staging object types per ASHRAE 135 Clause 12"
+>
+
+// Elevator Group object per Clause 12.58
+ElevatorGroup: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  groupId: Number?
+  groupMembers: Str?
+  groupMode: Str?
+  landingCallControl: Str?
+  landingCalls: Str?
+  landingDoorStatus: Str?
+  machineRoomId: Str?
+  makingCarCall: Str?
+  profileName: Str?
+}
+
+// Escalator object per Clause 12.60
+Escalator: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  escalatorMode: Str?
+  faultSignals: Str?
+  installationId: Number?
+  operationDirection: Str?
+  passengerAlarm: Marker?
+  powerMode: Marker?
+  profileName: Str?
+}
+
+// Lift object per Clause 12.59
+Lift: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  carAssignedDirection: Str?
+  carDoorCommand: Str?
+  carDoorStatus: Str?
+  carDoorText: Str?
+  carDoorZone: Str?
+  carDriveStatus: Str?
+  carLoad: Number?
+  carLoadUnits: Str?
+  carMode: Str?
+  carMovingDirection: Str?
+  carPosition: Number?
+  elevatorGroup: Ref?
+  energyMeter: Number?
+  energyMeterRef: Ref?
+  faultSignals: Str?
+  floorText: Str?
+  groupId: Number?
+  higherDeck: Ref?
+  installationId: Number?
+  landingCalls: Str?
+  landingDoorStatus: Str?
+  lowerDeck: Ref?
+  machineRoomId: Str?
+  makingCarCall: Str?
+  nextStoppingFloor: Number?
+  operationDirection: Str?
+  passengerAlarm: Marker?
+  powerMode: Marker?
+  registeredCarCall: Str?
+  profileName: Str?
+}
+
+// Staging object per Clause 12.62
+Staging: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number?
+  presentStage: Number?
+  stages: Str?
+  stageNames: Str?
+  targetReferences: Str?
+  defaultPresentValue: Number?
+  description: Str?
+  statusFlags: Str?
+  outOfService: Marker?
+  priorityArray: Str?
+  relinquishDefault: Number?
+  currentCommandPriority: Number?
+  profileName: Str?
+}

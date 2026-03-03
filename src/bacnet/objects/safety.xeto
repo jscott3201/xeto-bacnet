@@ -1,0 +1,51 @@
+pragma: Lib <
+  name:    "bacnet.objects.safety"
+  version: "0.1.0"
+  doc:     "BACnet life safety object types per ASHRAE 135 Clause 12"
+>
+
+// Life Safety Point object per Clause 12.15
+LifeSafetyPoint: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  trackingValue: Str?
+  lifeSafetyAlarmValues: Str?
+  mode: Str?
+  acceptedModes: Str?
+  silenced: Str?
+  operationExpected: Str?
+  maintenanceRequired: Marker?
+  setting: Number?
+  directReading: Number?
+  units: Str?
+  memberOf: Str?
+  profileName: Str?
+}
+
+// Life Safety Zone object per Clause 12.17
+LifeSafetyZone: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  zoneMembers: Str?
+  mode: Str?
+  acceptedModes: Str?
+  silenced: Str?
+  operationExpected: Str?
+  maintenanceRequired: Marker?
+  memberOf: Str?
+  profileName: Str?
+}

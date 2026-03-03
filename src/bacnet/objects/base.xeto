@@ -1,0 +1,61 @@
+pragma: Lib <
+  name:    "bacnet.objects.base",
+  version: "0.1.0",
+  doc:     "BACnet abstract object base type"
+>
+
+// Abstract base for all BACnet objects per ASHRAE 135 Clause 12
+// Common properties present on most/all object types
+BacnetObject: Dict <abstract> {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  deviceRef: Ref?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  profileName: Str?
+  propertyList: Str?
+  tags: Str?
+}
+
+// Mixin for objects that support COV
+CovSupport: Dict <abstract> {
+  covIncrement: Number?
+  covPeriod: Number?
+}
+
+// Mixin for objects with command priority array
+CommandPriority: Dict <abstract> {
+  priorityArray: Str?
+  relinquishDefault: Number?
+  currentCommandPriority: Number?
+}
+
+// Mixin for objects with intrinsic reporting
+IntrinsicReporting: Dict <abstract> {
+  eventEnable: Str?
+  ackedTransitions: Str?
+  notifyType: Str?
+  eventTimeStamps: Str?
+  eventMessageTexts: Str?
+  eventMessageTextsConfig: Str?
+  eventDetectionEnable: Marker?
+  eventAlgorithmInhibitRef: Ref?
+  eventAlgorithmInhibit: Marker?
+  timeDelay: Number?
+  timeDelayNormal: Number?
+  notificationClass: Number?
+  reliabilityEvaluationInhibit: Marker?
+}
+
+// Mixin for objects with limit monitoring
+LimitMonitoring: Dict <abstract> {
+  highLimit: Number?
+  lowLimit: Number?
+  deadband: Number?
+  limitEnable: Str?
+  limitMonitoringInterval: Number?
+}

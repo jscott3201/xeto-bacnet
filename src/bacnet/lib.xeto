@@ -1,0 +1,5 @@
+pragma: Lib <
+  name:    "bacnet",
+  version: "0.1.0",
+  doc:     "ASHRAE 135-2020 BACnet standard types for Xeto"
+>

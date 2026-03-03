@@ -1,0 +1,55 @@
+pragma: Lib <
+  name:    "bacnet.device",
+  version: "0.1.0",
+  doc:     "BACnet Device object type per ASHRAE 135 Clause 12.11"
+>
+
+// BACnet Device object — the root object in every BACnet device
+// Per Clause 12.11, every device has exactly one Device object
+BacnetDevice: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  systemStatus: Str?
+  vendorName: Str?
+  vendorIdentifier: Number?
+  modelName: Str?
+  firmwareRevision: Str?
+  applicationSoftwareVersion: Str?
+  location: Str?
+  description: Str?
+  protocolVersion: Number?
+  protocolRevision: Number?
+  protocolServicesSupported: Str?
+  protocolObjectTypesSupported: Str?
+  maxApduLengthAccepted: Number?
+  segmentationSupported: Str?
+  maxSegmentsAccepted: Number?
+  apduSegmentTimeout: Number?
+  apduTimeout: Number?
+  numberOfApduRetries: Number?
+  deviceAddressBinding: Str?
+  databaseRevision: Number?
+  configurationFiles: Str?
+  lastRestoreTime: Str?
+  backupFailureTimeout: Number?
+  activeCovSubscriptions: Str?
+  maxInfoFrames: Number?
+  maxMaster: Number?
+  lastRestartReason: Str?
+  timeOfDeviceRestart: Str?
+  restartNotificationRecipients: Str?
+  utcTimeSynchronizationRecipients: Str?
+  timeSynchronizationRecipients: Str?
+  timeSynchronizationInterval: Number?
+  alignIntervals: Marker?
+  intervalOffset: Number?
+  daylightSavingsStatus: Marker?
+  localDate: Str?
+  localTime: Str?
+  utcOffset: Number?
+  profileName: Str?
+  networkRef: Ref?
+  portRef: Ref?
+  address: Str?
+}

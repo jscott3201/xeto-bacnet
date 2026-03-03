@@ -1,0 +1,66 @@
+pragma: Lib <
+  name:    "bacnet.objects.multistate"
+  version: "0.1.0"
+  doc:     "BACnet multi-state object types per ASHRAE 135 Clause 12"
+>
+
+// Multi-State Input object per Clause 12.18
+MultiStateInput: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number
+  description: Str?
+  deviceRef: Ref?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  numberOfStates: Number
+  stateText: Str?
+  alarmValues: Str?
+  faultValues: Str?
+  profileName: Str?
+}
+
+// Multi-State Output object per Clause 12.19
+MultiStateOutput: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number
+  description: Str?
+  deviceRef: Ref?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  numberOfStates: Number
+  stateText: Str?
+  alarmValues: Str?
+  faultValues: Str?
+  priorityArray: Str?
+  relinquishDefault: Number?
+  profileName: Str?
+}
+
+// Multi-State Value object per Clause 12.20
+MultiStateValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number
+  description: Str?
+  deviceRef: Ref?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  numberOfStates: Number
+  stateText: Str?
+  alarmValues: Str?
+  faultValues: Str?
+  priorityArray: Str?
+  relinquishDefault: Number?
+  profileName: Str?
+}

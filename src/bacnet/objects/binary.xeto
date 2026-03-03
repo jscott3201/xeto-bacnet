@@ -1,0 +1,97 @@
+pragma: Lib <
+  name:    "bacnet.objects.binary"
+  version: "0.1.0"
+  doc:     "BACnet binary object types per ASHRAE 135 Clause 12"
+>
+
+// Binary Input object per Clause 12.5
+BinaryInput: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  deviceRef: Ref?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  polarity: Str?
+  activeText: Str?
+  inactiveText: Str?
+  changeOfStateTime: Str?
+  changeOfStateCount: Number?
+  elapsedActiveTime: Number?
+  timeOfActiveTimeReset: Str?
+  profileName: Str?
+}
+
+// Binary Output object per Clause 12.6
+BinaryOutput: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  deviceRef: Ref?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  polarity: Str?
+  activeText: Str?
+  inactiveText: Str?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  minimumOnTime: Number?
+  minimumOffTime: Number?
+  feedbackValue: Str?
+  profileName: Str?
+}
+
+// Binary Value object per Clause 12.7
+BinaryValue: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Str
+  description: Str?
+  deviceRef: Ref?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  activeText: Str?
+  inactiveText: Str?
+  priorityArray: Str?
+  relinquishDefault: Str?
+  changeOfStateTime: Str?
+  changeOfStateCount: Number?
+  profileName: Str?
+}
+
+// Binary Lighting Output object per Clause 12.55
+BinaryLightingOutput: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  presentValue: Number
+  description: Str?
+  deviceRef: Ref?
+  statusFlags: Str?
+  eventState: Str?
+  reliability: Str?
+  outOfService: Marker?
+  blinkWarnEnable: Marker?
+  egressActive: Marker?
+  egressTime: Number?
+  defaultFadeTime: Number?
+  defaultRampRate: Number?
+  defaultStepIncrement: Number?
+  power: Number?
+  lightingCommand: Str?
+  priorityArray: Str?
+  relinquishDefault: Number?
+  feedbackValue: Number?
+  profileName: Str?
+}

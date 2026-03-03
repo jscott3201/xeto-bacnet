@@ -1,0 +1,62 @@
+pragma: Lib <
+  name:    "bacnet.transport",
+  version: "0.1.0",
+  doc:     "BACnet data-link transport port types"
+>
+
+// Abstract transport port — matches ASHRAE 135 data-link layer
+BacnetPort: Dict <abstract> {
+  dis: Str?
+  networkRef: Ref?
+  maxNpduLength: Number?
+}
+
+// BACnet/IP transport per Annex J
+BIPPort: BacnetPort {
+  host: Str
+  port: Number
+  broadcastAddress: Str?
+  bbmdEnabled: Marker?
+  foreignDeviceEnabled: Marker?
+  foreignDeviceBbmd: Str?
+  foreignDeviceTtl: Number?
+  multicastEnabled: Marker?
+  multicastAddress: Str?
+  multicastTtl: Number?
+}
+
+// BACnet/IPv6 transport per Annex U
+BIP6Port: BacnetPort {
+  host: Str
+  port: Number
+  multicastAddress: Str?
+  vmac: Str?
+  vmacTtl: Number?
+}
+
+// BACnet Ethernet transport per Clause 7
+EthernetPort: BacnetPort {
+  interface: Str
+  macAddress: Str?
+}
+
+// MS/TP transport per Clause 9
+MSTPPort: BacnetPort {
+  serialPort: Str
+  baudRate: Number
+  stationAddress: Number
+  maxMaster: Number?
+  maxInfoFrames: Number?
+}
+
+// BACnet Secure Connect transport per Addendum BJ
+SecureConnectPort: BacnetPort {
+  hubUri: Str
+  primaryHubUri: Str?
+  failoverHubUri: Str?
+  certificatePath: Str?
+  directConnectAcceptEnabled: Marker?
+  directConnectInitiateEnabled: Marker?
+  maxBvlcLength: Number?
+  maxNpduLength: Number?
+}

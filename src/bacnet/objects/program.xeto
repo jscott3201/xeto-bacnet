@@ -1,0 +1,23 @@
+pragma: Lib <
+  name:    "bacnet.objects.program"
+  version: "0.1.0"
+  doc:     "BACnet Program object type per ASHRAE 135 Clause 12.22"
+>
+
+// Program object per Clause 12.22
+Program: Dict {
+  objectIdentifier: Number
+  objectName: Str
+  objectType: Str
+  description: Str?
+  statusFlags: Str?
+  outOfService: Marker?
+  programState: Str?
+  programChange: Str?
+  reasonForHalt: Str?
+  descriptionOfHalt: Str?
+  programLocation: Str?
+  instanceOf: Str?
+  reliability: Str?
+  profileName: Str?
+}

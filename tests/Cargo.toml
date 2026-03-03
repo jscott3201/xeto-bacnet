@@ -1,0 +1,10 @@
+[package]
+name = "xeto-bacnet-tests"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+rusty-haystack-core = { path = "/Users/justin/Development/rusty-haystack/haystack-core" }
