@@ -7,4 +7,4 @@ license.workspace = true
 publish = false
 
 [dependencies]
-rusty-haystack-core = { path = "/Users/justin/Development/rusty-haystack/haystack-core" }
+haystack-core = { git = "https://github.com/jscott3201/rusty-haystack.git", package = "rusty-haystack-core" }

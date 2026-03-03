@@ -623,6 +623,7 @@ checksum = "b39cdef0fa800fc44525c84ccb54a029961a8215f9619753635a9c0d2538d46d"
 [[package]]
 name = "rusty-haystack-core"
 version = "0.7.1"
+source = "git+https://github.com/jscott3201/rusty-haystack.git#2cebca84fbe041c2fd24bee5e45c6a35460d6944"
 dependencies = [
  "base64",
  "chrono",
